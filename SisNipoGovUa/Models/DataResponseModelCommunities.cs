@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DecentralizationGovUa.Models
 {
-    public class DataResponseModel
+    public class DataResponseModelCommunities
     {
-        public List<AreaResponseModel>? Areas { get; set; }
+        public List<CommunitiesResponseModel>? Communities { get; set; }
     }
 }

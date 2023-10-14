@@ -8,6 +8,9 @@ namespace DecentralizationGovUa.Models
 {
     public class ResponseModel
     {
-        public DataResponseModel? Data {  get; set; }
+        //public DataResponseModelAREA? Data {  get; set; }
+        //public DataResponseModelRegions? Data { get; set; }
+        public DataResponseModelCommunities? Data {  get; set; }
+
     }
 }

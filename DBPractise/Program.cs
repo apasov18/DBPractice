@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DecentralizationGovUa.Implements;
 using SisNipoGovUa.Data;
 using SisNipoGovUa.Implements;
 using System.Collections.Generic;
@@ -9,24 +10,23 @@ namespace DBPractise
     {
         static async Task  Main(string[] args)
         {
-            ParseDecentralizationGovUa parser = new ParseDecentralizationGovUa();
+             ParseCommunities parser = new ParseCommunities();
 
             using (var database = Context.Connect)
             {
                 foreach (var data in parser)
                 {
                     
-                    foreach (var a in data.Data.Areas)
+                    foreach (var a in data.Data.Communities)
                     {
-                        
-                        //await Console.Out.WriteLineAsync( a.Title);
-                        //await Console.Out.WriteLineAsync(a.SumCommunitiesSquare.ToString());
+
+                        //await Console.Out.WriteLineAsync(a.Title);
+                        //await Console.Out.WriteLineAsync(a.AreaId.ToString());
                         //await Console.Out.WriteLineAsync(a.Population.ToString());
-
-
-
-                        await database.ExecuteAsync(@"INSERT INTO Areas VALUES 
-                           (@Id, @Title,@Square,@Population,@LocalCommunityCount,@PercentCommunitiesFromArea,@SumCommunitiesSquare)",a);
+                        //await Console.Out.WriteLineAsync(a.Koatuu.ToString());
+                        
+                        await database.ExecuteAsync(@"INSERT INTO Communities VALUES 
+                           (@Id,@Title,@Center,@Created,@AreaId,@RegionId,@Population,@Square,@CouncilSize,@DistrictSize,@Koatuu)", a);
                     }
 
                 }

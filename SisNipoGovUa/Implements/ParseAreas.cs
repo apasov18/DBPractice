@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace SisNipoGovUa.Implements
 {
-    public class ParseDecentralizationGovUa : IEnumerable<ResponseModel>
+    public class ParseAreas : IEnumerable<ResponseModel>
     {
         readonly string _url = "https://decentralization.gov.ua/graphql?query={areas{title,id,square,population,local_community_count,percent_communities_from_area,sum_communities_square}}";
 
